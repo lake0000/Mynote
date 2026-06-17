@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mynote 私人日记</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-theme="rose">
+    <div class="petal petal-one"></div>
+    <div class="petal petal-two"></div>
+    <main class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <section class="brand-row">
+          <div>
+            <p class="eyebrow">Private diary</p>
+            <h1>Mynote</h1>
+          </div>
+          <button class="icon-button" id="newNoteBtn" title="新建笔记">＋</button>
+        </section>
+
+        <section class="search-panel">
+          <label for="searchInput">搜索</label>
+          <input id="searchInput" type="search" placeholder="标题或正文关键词" autocomplete="off" />
+        </section>
+
+        <nav class="category-tabs" id="categoryTabs" aria-label="分类筛选"></nav>
+
+        <section class="note-list" id="noteList" aria-label="笔记列表"></section>
+
+        <section class="utility-panel">
+          <button id="trashBtn" class="ghost-button">回收站</button>
+          <button id="backupBtn" class="ghost-button">备份</button>
+          <button id="restoreBtn" class="ghost-button">恢复最近备份</button>
+        </section>
+      </aside>
+
+      <section class="editor-stage">
+        <header class="topbar">
+          <div class="status-stack">
+            <span id="saveStatus" class="save-status">准备中</span>
+            <span id="backupStatus" class="backup-status">本地 SQLite 保存</span>
+          </div>
+          <div class="topbar-actions">
+            <select id="fontSizeSelect" title="全局字号">
+              <option value="16">16</option>
+              <option value="18">18</option>
+              <option value="20">20</option>
+              <option value="22">22</option>
+            </select>
+            <select id="themeSelect" title="主题">
+              <option value="rose">蔷薇</option>
+              <option value="night">夜樱</option>
+            </select>
+          </div>
+        </header>
+
+        <article class="paper">
+          <section class="meta-row">
+            <select id="categorySelect" title="笔记分类"></select>
+            <button id="pinBtn" class="chip-button" title="置顶">置顶</button>
+            <button id="deleteBtn" class="chip-button danger" title="删除到回收站">删除</button>
+            <button id="restoreNoteBtn" class="chip-button hidden" title="恢复笔记">恢复</button>
+          </section>
+
+          <input id="titleInput" class="title-input" placeholder="今天想记些什么？" />
+
+          <div class="toolbar" aria-label="编辑工具栏">
+            <button data-command="bold" title="加粗"><strong>B</strong></button>
+            <button data-command="italic" title="斜体"><em>I</em></button>
+            <button data-command="insertUnorderedList" title="无序列表">列表</button>
+            <button data-command="formatBlock" data-value="blockquote" title="引用块">摘抄</button>
+            <button data-command="insertHorizontalRule" title="分割线">分割线</button>
+            <button data-command="removeFormat" title="清除格式">清除</button>
+          </div>
+
+          <div
+            id="editor"
+            class="editor"
+            contenteditable="true"
+            spellcheck="true"
+            aria-label="日记正文"
+          ></div>
+        </article>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
+
