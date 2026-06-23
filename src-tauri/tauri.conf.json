@@ -10,7 +10,7 @@
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "Mynote ????",
+        "title": "Mynote 私人日记",
         "width": 1220,
         "height": 820,
         "minWidth": 920,

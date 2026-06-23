@@ -30,6 +30,5 @@ __pycache__/
 # Temporary and OS files
 .playwright-mcp/
 *.log
-*.lnk
 Thumbs.db
 .DS_Store
